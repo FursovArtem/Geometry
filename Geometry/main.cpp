@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <vector>
 using std::cout;
 using std::cin;
@@ -18,8 +18,8 @@ string multistring(string str, int times)
 void figure0()
 {
 	int rows, stars_count;
-	cout << "0. Введите количество * в ряду: "; cin >> stars_count;
-	cout << "Введите количество рядов: "; cin >> rows;
+	cout << "0. Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ * РІ СЂСЏРґСѓ: "; cin >> stars_count;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ: "; cin >> rows;
 	for (int i = 0; i < rows; i++)
 	{
 		cout << multistring("*", stars_count) << endl;
@@ -28,7 +28,7 @@ void figure0()
 void figure1()
 {
 	int rows;
-	cout << "1. Введите количество рядов: "; cin >> rows;
+	cout << "1. Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ: "; cin >> rows;
 	for (int i = 1; i <= rows; i++)
 	{
 		cout << multistring("*", i) << multistring(" ", rows - i) << endl;
@@ -37,7 +37,7 @@ void figure1()
 void figure2()
 {
 	int rows;
-	cout << "2. Введите количество рядов: "; cin >> rows;
+	cout << "2. Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ: "; cin >> rows;
 	for (int i = 0; i < rows; i++)
 	{
 		cout << multistring("*", rows - i) << multistring(" ", i) << endl;
@@ -46,7 +46,7 @@ void figure2()
 void figure3()
 {
 	int rows;
-	cout << "3. Введите количество рядов: "; cin >> rows;
+	cout << "3. Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ: "; cin >> rows;
 	for (int i = 0; i < rows; i++)
 	{
 		cout << multistring(" ", i) << multistring("*", rows - i) << endl;
@@ -55,7 +55,7 @@ void figure3()
 void figure4()
 {
 	int rows;
-	cout << "4. Введите количество рядов: "; cin >> rows;
+	cout << "4. Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ: "; cin >> rows;
 	for (int i = 1; i <= rows; i++)
 	{
 		cout << multistring(" ", rows - i) << multistring("*", i) << endl;
@@ -64,14 +64,14 @@ void figure4()
 void figure5()
 {
 	int length;
-	cout << "5. Введите длину одной грани ромба: "; cin >> length;
-	//Верхняя половина
+	cout << "5. Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РѕРґРЅРѕР№ РіСЂР°РЅРё СЂРѕРјР±Р°: "; cin >> length;
+	//Р’РµСЂС…РЅСЏСЏ РїРѕР»РѕРІРёРЅР°
 	for (int i = 1; i <= length; i++)
 	{
 		cout << multistring(" ", length - i) << "/" << multistring(" ", (i - 1) * 2);
 		cout << "\\" << multistring(" ", length - i) << endl;
 	}
-	//Нижняя половина
+	//РќРёР¶РЅСЏСЏ РїРѕР»РѕРІРёРЅР°
 	for (int i = 0; i < length; i++)
 	{
 		cout << multistring(" ", i) << "\\" << multistring(" ", (length - i - 1) * 2);
@@ -81,15 +81,15 @@ void figure5()
 void figure6_v1()
 {
 	int rows, symbols;
-	cout << "6. Введите количество символов в ряду: "; cin >> symbols;
-	cout << "Введите количество рядов: "; cin >> rows;
+	cout << "6. Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ РІ СЂСЏРґСѓ: "; cin >> symbols;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ: "; cin >> rows;
 	for (int i = 0; i < rows; i++)
 	{
-		if (i % 2 == 0)				//Проверка на четность строки, четные с плюса, нечетные с минуса
+		if (i % 2 == 0)				//РџСЂРѕРІРµСЂРєР° РЅР° С‡РµС‚РЅРѕСЃС‚СЊ СЃС‚СЂРѕРєРё, С‡РµС‚РЅС‹Рµ СЃ РїР»СЋСЃР°, РЅРµС‡РµС‚РЅС‹Рµ СЃ РјРёРЅСѓСЃР°
 		{
 			cout << multistring("+-", (symbols + 1) / 2);
-			if (symbols % 2 != 0)	//Проверка если нечетное количество символов в строке, то
-			{						//нужно удалить один символ из последней пары
+			if (symbols % 2 != 0)	//РџСЂРѕРІРµСЂРєР° РµСЃР»Рё РЅРµС‡РµС‚РЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ РІ СЃС‚СЂРѕРєРµ, С‚Рѕ
+			{						//РЅСѓР¶РЅРѕ СѓРґР°Р»РёС‚СЊ РѕРґРёРЅ СЃРёРјРІРѕР» РёР· РїРѕСЃР»РµРґРЅРµР№ РїР°СЂС‹
 				cout << "\b ";
 			}
 			cout << endl;
@@ -97,7 +97,7 @@ void figure6_v1()
 		else
 		{
 			cout << multistring("-+", (symbols + 1) / 2);
-			if (symbols % 2 != 0)	//То же самое для нечетных строк
+			if (symbols % 2 != 0)	//РўРѕ Р¶Рµ СЃР°РјРѕРµ РґР»СЏ РЅРµС‡РµС‚РЅС‹С… СЃС‚СЂРѕРє
 			{
 				cout << "\b ";
 			}
@@ -108,14 +108,14 @@ void figure6_v1()
 void figure6_v2()
 {
 	int rows, symbols;
-	cout << "6. Введите количество символов в ряду: "; cin >> symbols;
-	cout << "Введите количество рядов: "; cin >> rows;
+	cout << "6. Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ РІ СЂСЏРґСѓ: "; cin >> symbols;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ: "; cin >> rows;
 	std::vector<std::vector<char>> vector2D(rows, std::vector<char>(symbols));
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < symbols; j++)
 		{
-			if ((i + j) % 2 == 0)	//Проверка на четность текущей позиции курсора
+			if ((i + j) % 2 == 0)	//РџСЂРѕРІРµСЂРєР° РЅР° С‡РµС‚РЅРѕСЃС‚СЊ С‚РµРєСѓС‰РµР№ РїРѕР·РёС†РёРё РєСѓСЂСЃРѕСЂР°
 			{
 				vector2D[i][j] = '+';
 				cout << vector2D[i][j];
